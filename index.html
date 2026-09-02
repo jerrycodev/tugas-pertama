@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil Biodata - Jerryco Sompotan</title>
 
+    <!-- Bootstrap 5 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,317 +26,304 @@
     />
 
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Poppins", sans-serif;
-      }
-
       body {
-        background-color: #ffffff;
-        color: #000000;
-        line-height: 1.6;
+        font-family: "Poppins", sans-serif;
+        color: #333;
       }
 
-      a {
-        text-decoration: none;
-        color: inherit;
+      /* Navbar */
+      .navbar {
+        padding: 0.75rem 0;
       }
-
-      .container {
-        width: min(100% - 4rem, 1200px);
-        margin: 0 auto;
-      }
-
-      .section-title {
-        font-size: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        text-align: center;
-        color: #007bfd;
-      }
-
-      .section-subtitle {
-        font-size: 1.2rem;
-        margin-bottom: 2rem;
-        text-align: center;
-        color: #555555;
-      }
-
-      header,
-      footer {
-        background-image: linear-gradient(to right, #007bfd, #0057b6);
-        padding: 1rem 0;
-        color: #ffffff;
-      }
-      header nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      footer {
-        text-align: center;
-        margin-top: 2rem;
-      }
-      .logo {
+      .navbar-brand {
         font-size: 1.5rem;
         font-weight: 700;
       }
 
-      .nav-links a {
-        margin-left: 1.5rem;
-        font-weight: 500;
-        transition: color 0.3s;
+      /* Mobile modal trigger button */
+      .modal-nav-btn {
+        display: none;
       }
 
-      .nav-links a:hover {
-        color: #dceeff;
+      @media (max-width: 991.98px) {
+        .modal-nav-btn {
+          display: inline-flex;
+        }
       }
 
-      .btn-cta {
-        display: inline-block;
-        padding: 0.75rem 1.5rem;
-        background-color: #007bfd;
-        color: #ffffff;
-        border-radius: 5px;
-        transition: background-color 0.3s;
-        margin-top: 1rem;
-      }
-
-      .btn-cta:hover {
-        background-color: #0057b6;
-      }
-
-      .hero-text h1 {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-      }
-
-      .hero-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+      /* Modal nav links */
+      .modal-nav-link {
+        display: flex;
         align-items: center;
-        padding: 4rem 0;
-        text-align: center;
-      }
-      .hero-image img {
-        max-width: 100%;
-        border-radius: 10px;
-      }
-
-      .biodata-table {
-        width: 100%;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
         gap: 1rem;
+        padding: 1rem 1.25rem;
+        border-radius: 0.5rem;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s;
       }
-      .biodata-table div {
-        padding: 1rem;
-        background-color: #f1f1f1;
-        text-align: center;
-      }
-
-      .biodata-table strong {
-        display: block;
-        margin-bottom: 0.5rem;
+      .modal-nav-link:hover {
+        background-color: #e9ecef;
         color: #007bfd;
       }
-
-      .portfolio-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-      }
-      .portfolio-card {
-        padding: 1rem;
-        border: 1px solid #ddd;
+      .modal-nav-link i {
+        font-size: 1.25rem;
+        color: #007bfd;
+        width: 2rem;
         text-align: center;
       }
 
-      .portfolio-img {
-        width: 100%;
+      /* Hero */
+      .hero-section {
+        padding: 4rem 0;
+      }
+      .hero-section h1 {
+        font-weight: 700;
+      }
+
+      /* Biodata */
+      .biodata-label {
+        color: #007bfd;
+        font-weight: 600;
+      }
+
+      /* Portfolio card */
+      .portfolio-card {
+        border: 1px solid #dee2e6;
+        border-radius: 0.5rem;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .portfolio-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      }
+      .portfolio-img-placeholder {
         height: 200px;
-        background-color: #f0f0f0;
+        background-color: #e9ecef;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 1rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+        font-size: 1.1rem;
+        color: #6c757d;
       }
 
-      @media (max-width: 768px) {
-        .container {
-          width: min(100% - 3rem, 640px);
-        }
-
-        .hero-container {
-          grid-template-columns: 1fr;
-          gap: 2rem;
-          padding: 3rem 0;
-        }
-
-        .hero-text {
-          order: 2;
-        }
-
-        .hero-image {
-          order: 1;
-        }
-
-        .hero-image img {
-          width: min(100%, 360px);
-        }
-
-        .biodata-table {
-          grid-template-columns: repeat(2, 1fr);
-        }
-      }
-
-      @media (max-width: 480px) {
-        .container {
-          width: min(100% - 2rem, 400px);
-        }
-
-        header nav {
-          align-items: flex-start;
-          flex-direction: column;
-          gap: 0.75rem;
-        }
-
-        .nav-links {
-          display: flex;
-          flex-wrap: wrap;
-          gap: 0.5rem 1rem;
-        }
-
-        .nav-links a {
-          margin-left: 0;
-        }
-
-        .hero-container {
-          padding: 2.5rem 0;
-          text-align: left;
-        }
-
-        .hero-text h1 {
-          font-size: 2rem;
-        }
-
-        .section-title {
-          font-size: 1.75rem;
-        }
-
-        .section-subtitle {
-          font-size: 1rem;
-        }
-
-        .biodata-table {
-          grid-template-columns: 1fr;
-        }
-
-        .portfolio-grid {
-          gap: 1rem;
-        }
+      /* Footer gradient */
+      .footer-gradient {
+        background-image: linear-gradient(to right, #007bfd, #0057b6);
       }
     </style>
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
-          <div class="logo">Brand.</div>
-          <div class="nav-links">
-            <a href="#">Home</a>
-            <a href="#about">About</a>
-            <a href="#portfolio">Portfolio</a>
-          </div>
-        </nav>
-      </div>
-    </header>
 
-    <div class="container">
-      <section id="home">
-        <div class="hero-container">
-          <div class="hero-text">
-            <h1>Selamat Datang di Website Saya</h1>
-            <p>
+    <!-- ===================== NAVBAR ===================== -->
+    <nav class="navbar navbar-expand-lg navbar-dark footer-gradient sticky-top">
+      <div class="container">
+        <a class="navbar-brand text-white" href="#home">Brand.</a>
+
+        <!-- Hamburger / modal trigger (visible on mobile) -->
+        <button
+          class="btn btn-outline-light modal-nav-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#navModal"
+          aria-label="Open navigation menu"
+        >
+          <i class="bi bi-list fs-4"></i>
+        </button>
+
+        <!-- Desktop collapse nav (hidden on mobile) -->
+        <div class="collapse navbar-collapse d-none d-lg-block">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#portfolio">Portfolio</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== MOBILE MODAL ===================== -->
+    <div
+      class="modal fade"
+      id="navModal"
+      tabindex="-1"
+      aria-labelledby="navModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-fullscreen-sm-down">
+        <div class="modal-content border-0">
+          <div class="modal-header footer-gradient text-white">
+            <h5 class="modal-title" id="navModalLabel">Navigasi</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body d-flex flex-column gap-2">
+            <a href="#home" class="modal-nav-link" data-bs-dismiss="modal">
+              <i class="bi bi-house-door-fill"></i> Home
+            </a>
+            <a href="#about" class="modal-nav-link" data-bs-dismiss="modal">
+              <i class="bi bi-person-fill"></i> About
+            </a>
+            <a href="#portfolio" class="modal-nav-link" data-bs-dismiss="modal">
+              <i class="bi bi-grid-fill"></i> Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="home" class="hero-section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6 text-center text-lg-start">
+            <h1 class="display-5 mb-3">Selamat Datang di Website Saya</h1>
+            <p class="lead text-secondary mb-3">
               Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks
               profil singkat dan penjelasan mengenai keahlian teknis serta
               bisnis yang saya kelola saat ini.
             </p>
-            <a href="#about" class="btn-cta">Pelajari Lebih Lanjut</a>
+            <a href="#about" class="btn btn-primary btn-lg px-4">
+              Pelajari Lebih Lanjut
+            </a>
           </div>
-          <div class="hero-image">
+          <div class="col-lg-6 text-center">
             <img
               src="https://avatars.githubusercontent.com/u/323980747?s=400&u=323b034bbcbee883a7cf4f3775390372aaa8f2fb&v=4"
               alt="Jerryco Sompotan"
+              class="img-fluid rounded shadow"
+              style="max-width: 360px"
             />
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <section id="about">
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="py-5 bg-light">
       <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p class="section-subtitle">A brief introduction about myself</p>
+        <h2 class="section-title text-center mb-1">About Me</h2>
+        <p class="text-center text-secondary mb-4">
+          A brief introduction about myself
+        </p>
 
-        <div class="biodata-table">
-          <div>
-            <strong>Full Name</strong>
-            <span>Jerryco Sompotan</span>
+        <div class="row g-3">
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Full Name</div>
+                <span>Jerryco Sompotan</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Education</strong>
-            <span>Development Training</span>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Education</div>
+                <span>Development Training</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Pekerjaan</strong>
-            <span>E-commerce Owner (OOTDverse)</span>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Pekerjaan</div>
+                <span>E-commerce Owner (OOTDverse)</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Contact</strong>
-            <span>jerryco@example.com</span>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Contact</div>
+                <span>jerryco@example.com</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Hobi</strong>
-            <span>Tech Projects & Stock Trading</span>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Hobi</div>
+                <span>Tech Projects &amp; Stock Trading</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <strong>Alamat</strong>
-            <span>Jakarta, Indonesia</span>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card text-center h-100 border-0 shadow-sm">
+              <div class="card-body">
+                <div class="biodata-label mb-1">Alamat</div>
+                <span>Jakarta, Indonesia</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="portfolio">
+    <!-- ===================== PORTFOLIO ===================== -->
+    <section id="portfolio" class="py-5">
       <div class="container">
-        <h2 class="section-title">Portofolio</h2>
-        <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <div class="portfolio-img">350 x 200</div>
-            <h3>Proyek 1</h3>
-            <p>Manajemen dan operasional E-commerce OOTDverse.</p>
+        <h2 class="section-title text-center mb-4">Portofolio</h2>
+
+        <div class="row g-4">
+          <div class="col-sm-6 col-lg-4">
+            <div class="card portfolio-card h-100 border-0 shadow-sm">
+              <div class="portfolio-img-placeholder">350 x 200</div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Proyek 1</h5>
+                <p class="card-text text-secondary">
+                  Manajemen dan operasional E-commerce OOTDverse.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="portfolio-card">
-            <div class="portfolio-img">350 x 200</div>
-            <h3>Proyek 2</h3>
-            <p>Instalasi & konfigurasi sistem PABX/VoIP.</p>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card portfolio-card h-100 border-0 shadow-sm">
+              <div class="portfolio-img-placeholder">350 x 200</div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Proyek 2</h5>
+                <p class="card-text text-secondary">
+                  Instalasi &amp; konfigurasi sistem PABX/VoIP.
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="portfolio-card">
-            <div class="portfolio-img">350 x 200</div>
-            <h3>Proyek 3</h3>
-            <p>Integrasi Shipping API untuk logistik bisnis.</p>
+          <div class="col-sm-6 col-lg-4">
+            <div class="card portfolio-card h-100 border-0 shadow-sm">
+              <div class="portfolio-img-placeholder">350 x 200</div>
+              <div class="card-body text-center">
+                <h5 class="card-title">Proyek 3</h5>
+                <p class="card-text text-secondary">
+                  Integrasi Shipping API untuk logistik bisnis.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <footer>
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer-gradient text-white text-center py-4">
       <div class="container">
-        <p>&copy; 2026 Jerryco Sompotan. All rights reserved.</p>
+        <p class="mb-0">&copy; 2026 Jerryco Sompotan. All rights reserved.</p>
       </div>
     </footer>
+
+    <!-- Bootstrap 5 JS Bundle (includes Popper) -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    ></script>
   </body>
 </html>
