@@ -1,283 +1,329 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Profil Biodata - Jerryco Sompotan</title>
-    
-    <!-- Menambahkan Font Poppins dari Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
     <style>
-        /* Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            /* Mengubah font bawaan menjadi Poppins */
-            font-family: 'Poppins', sans-serif;
-        }
-        body {
-            background-color: #ffffff;
-            color: #000000;
-            line-height: 1.6;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        background-color: #ffffff;
+        color: #000000;
+        line-height: 1.6;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .container {
+        width: min(100% - 4rem, 1200px);
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: #007bfd;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        color: #555555;
+      }
+
+      header,
+      footer {
+        background-image: linear-gradient(to right, #007bfd, #0057b6);
+        padding: 1rem 0;
+        color: #ffffff;
+      }
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
+
+      .nav-links a {
+        margin-left: 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: #dceeff;
+      }
+
+      .btn-cta {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #007bfd;
+        color: #ffffff;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        margin-top: 1rem;
+      }
+
+      .btn-cta:hover {
+        background-color: #0057b6;
+      }
+
+      .hero-text h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        padding: 4rem 0;
+        text-align: center;
+      }
+      .hero-image img {
+        max-width: 100%;
+        border-radius: 10px;
+      }
+
+      .biodata-table {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+      .biodata-table div {
+        padding: 1rem;
+        background-color: #f1f1f1;
+        text-align: center;
+      }
+
+      .biodata-table strong {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: #007bfd;
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+      .portfolio-card {
+        padding: 1rem;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      .portfolio-img {
+        width: 100%;
+        height: 200px;
+        background-color: #f0f0f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      @media (max-width: 768px) {
         .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        section {
-            padding: 80px 0;
-            border-bottom: 1px solid #eeeeee;
-        }
-        
-        /* Section 1: Menu */
-        header {
-            border-bottom: 1px solid #eeeeee;
-            padding: 20px 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: #333333;
-            margin-left: 30px;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #000000;
+          width: min(100% - 3rem, 640px);
         }
 
-        /* Section 2: Hero */
         .hero-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          padding: 3rem 0;
         }
+
         .hero-text {
-            flex: 1;
+          order: 2;
         }
-        .hero-text h1 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            line-height: 1.2;
-            font-weight: 600;
-        }
-        .hero-text p {
-            color: #555555;
-            margin-bottom: 30px;
-            font-size: 16px;
-            font-weight: 300;
-        }
-        .btn-black {
-            display: inline-block;
-            background-color: #000000;
-            color: #ffffff;
-            padding: 12px 28px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: background-color 0.3s;
-        }
-        .btn-black:hover {
-            background-color: #333333;
-        }
+
         .hero-image {
-            flex: 1;
-            background-color: #f4f4f4;
-            height: 350px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888888;
-            border: 1px solid #dddddd;
-            font-weight: 300;
+          order: 1;
         }
 
-        /* Section 3: Biodata (Menggunakan HTML Table) */
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 10px;
-            font-weight: 600;
+        .hero-image img {
+          width: min(100%, 360px);
         }
-        .section-subtitle {
-            text-align: center;
-            color: #666666;
-            margin-bottom: 50px;
-            font-weight: 300;
-        }
+
         .biodata-table {
-            width: 100%;
-            border-collapse: separate;
-            border-spacing: 15px;
-            table-layout: fixed;
+          grid-template-columns: repeat(2, 1fr);
         }
-        .biodata-table td {
-            background-color: #fcfcfc;
-            border: 1px solid #e0e0e0;
-            padding: 25px 20px;
-            text-align: center;
-            transition: border-color 0.3s;
-        }
-        .biodata-table td:hover {
-            border-color: #000000;
-        }
-        .biodata-table strong {
-            display: block;
-            font-size: 13px;
-            color: #888888;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 600;
-        }
-        .biodata-table span {
-            font-size: 16px;
-            font-weight: 400;
+      }
+
+      @media (max-width: 480px) {
+        .container {
+          width: min(100% - 2rem, 400px);
         }
 
-        /* Section 4: Portofolio */
+        header nav {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 0.75rem;
+        }
+
+        .nav-links {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem 1rem;
+        }
+
+        .nav-links a {
+          margin-left: 0;
+        }
+
+        .hero-container {
+          padding: 2.5rem 0;
+          text-align: left;
+        }
+
+        .hero-text h1 {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.75rem;
+        }
+
+        .section-subtitle {
+          font-size: 1rem;
+        }
+
+        .biodata-table {
+          grid-template-columns: 1fr;
+        }
+
         .portfolio-grid {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
+          gap: 1rem;
         }
-        .portfolio-card {
-            flex: 1;
-            border: 1px solid #e0e0e0;
-            padding: 15px;
-            text-align: center;
-        }
-        .portfolio-img {
-            background-color: #f4f4f4;
-            height: 200px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #888888;
-            font-weight: 300;
-        }
-        .portfolio-card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-        .portfolio-card p {
-            font-size: 14px;
-            color: #555555;
-            font-weight: 300;
-        }
+      }
     </style>
-</head>
-<body>
-
-    <!-- Section 1: Menu -->
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Brand.</div>
-                <div class="nav-links">
-                    <a href="#">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#portfolio">Portfolio</a>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav>
+          <div class="logo">Brand.</div>
+          <div class="nav-links">
+            <a href="#">Home</a>
+            <a href="#about">About</a>
+            <a href="#portfolio">Portfolio</a>
+          </div>
+        </nav>
+      </div>
     </header>
 
-    <!-- Section 2: Judul Kiri, Gambar Kanan -->
     <div class="container">
-        <section id="home" style="border-bottom: none;">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h1>Selamat Datang di Website Saya</h1>
-                    <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks profil singkat dan penjelasan mengenai keahlian teknis serta bisnis yang saya kelola saat ini.</p>
-                    <a href="#about" class="btn-black">Pelajari Lebih Lanjut</a>
-                </div>
-                <div class="hero-image">
-                    [ Gambar Profil Anda ]
-                </div>
-            </div>
-        </section>
+      <section id="home">
+        <div class="hero-container">
+          <div class="hero-text">
+            <h1>Selamat Datang di Website Saya</h1>
+            <p>
+              Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks
+              profil singkat dan penjelasan mengenai keahlian teknis serta
+              bisnis yang saya kelola saat ini.
+            </p>
+            <a href="#about" class="btn-cta">Pelajari Lebih Lanjut</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="https://avatars.githubusercontent.com/u/323980747?s=400&u=323b034bbcbee883a7cf4f3775390372aaa8f2fb&v=4"
+              alt="Jerryco Sompotan"
+            />
+          </div>
+        </div>
+      </section>
     </div>
 
-    <!-- Section 3: Biodata -->
     <section id="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <p class="section-subtitle">A brief introduction about myself</p>
-            
-            <table class="biodata-table">
-                <tr>
-                    <td>
-                        <strong>Full Name</strong>
-                        <span>Jerryco Sompotan</span>
-                    </td>
-                    <td>
-                        <strong>Education</strong>
-                        <span>Development Training</span>
-                    </td>
-                    <td>
-                        <strong>Pekerjaan</strong>
-                        <span>E-commerce Owner (OOTDverse)</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <strong>Contact</strong>
-                        <span>jerryco@example.com</span>
-                    </td>
-                    <td>
-                        <strong>Hobi</strong>
-                        <span>Tech Projects & Stock Trading</span>
-                    </td>
-                    <td>
-                        <strong>Alamat</strong>
-                        <span>Jakarta, Indonesia</span>
-                    </td>
-                </tr>
-            </table>
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">A brief introduction about myself</p>
+
+        <div class="biodata-table">
+          <div>
+            <strong>Full Name</strong>
+            <span>Jerryco Sompotan</span>
+          </div>
+          <div>
+            <strong>Education</strong>
+            <span>Development Training</span>
+          </div>
+          <div>
+            <strong>Pekerjaan</strong>
+            <span>E-commerce Owner (OOTDverse)</span>
+          </div>
+          <div>
+            <strong>Contact</strong>
+            <span>jerryco@example.com</span>
+          </div>
+          <div>
+            <strong>Hobi</strong>
+            <span>Tech Projects & Stock Trading</span>
+          </div>
+          <div>
+            <strong>Alamat</strong>
+            <span>Jakarta, Indonesia</span>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- Section 4: Portofolio -->
-    <section id="portfolio" style="border-bottom: none;">
-        <div class="container">
-            <h2 class="section-title">Portofolio</h2>
-            <br>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-img">350 x 200</div>
-                    <h3>Proyek 1</h3>
-                    <p>Manajemen dan operasional E-commerce OOTDverse.</p>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-img">350 x 200</div>
-                    <h3>Proyek 2</h3>
-                    <p>Instalasi & konfigurasi sistem PABX/VoIP.</p>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-img">350 x 200</div>
-                    <h3>Proyek 3</h3>
-                    <p>Integrasi Shipping API untuk logistik bisnis.</p>
-                </div>
-            </div>
+    <section id="portfolio">
+      <div class="container">
+        <h2 class="section-title">Portofolio</h2>
+        <div class="portfolio-grid">
+          <div class="portfolio-card">
+            <div class="portfolio-img">350 x 200</div>
+            <h3>Proyek 1</h3>
+            <p>Manajemen dan operasional E-commerce OOTDverse.</p>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-img">350 x 200</div>
+            <h3>Proyek 2</h3>
+            <p>Instalasi & konfigurasi sistem PABX/VoIP.</p>
+          </div>
+          <div class="portfolio-card">
+            <div class="portfolio-img">350 x 200</div>
+            <h3>Proyek 3</h3>
+            <p>Integrasi Shipping API untuk logistik bisnis.</p>
+          </div>
         </div>
+      </div>
     </section>
 
-</body>
+    <footer>
+      <div class="container">
+        <p>&copy; 2026 Jerryco Sompotan. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>
