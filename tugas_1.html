@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Biodata - Jerryco Sompotan</title>
+    
+    <!-- Menambahkan Font Poppins dari Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* Mengubah font bawaan menjadi Poppins */
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eeeeee;
+        }
+        
+        /* Section 1: Menu */
+        header {
+            border-bottom: 1px solid #eeeeee;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: #333333;
+            margin-left: 30px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #000000;
+        }
+
+        /* Section 2: Hero */
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-weight: 600;
+        }
+        .hero-text p {
+            color: #555555;
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .btn-black {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff;
+            padding: 12px 28px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .btn-black:hover {
+            background-color: #333333;
+        }
+        .hero-image {
+            flex: 1;
+            background-color: #f4f4f4;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            border: 1px solid #dddddd;
+            font-weight: 300;
+        }
+
+        /* Section 3: Biodata (Menggunakan HTML Table) */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 50px;
+            font-weight: 300;
+        }
+        .biodata-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px;
+            table-layout: fixed;
+        }
+        .biodata-table td {
+            background-color: #fcfcfc;
+            border: 1px solid #e0e0e0;
+            padding: 25px 20px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .biodata-table td:hover {
+            border-color: #000000;
+        }
+        .biodata-table strong {
+            display: block;
+            font-size: 13px;
+            color: #888888;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+        .biodata-table span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        /* Section 4: Portofolio */
+        .portfolio-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+        .portfolio-card {
+            flex: 1;
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            text-align: center;
+        }
+        .portfolio-img {
+            background-color: #f4f4f4;
+            height: 200px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888888;
+            font-weight: 300;
+        }
+        .portfolio-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        .portfolio-card p {
+            font-size: 14px;
+            color: #555555;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Menu -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Brand.</div>
+                <div class="nav-links">
+                    <a href="#">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section 2: Judul Kiri, Gambar Kanan -->
+    <div class="container">
+        <section id="home" style="border-bottom: none;">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>Selamat Datang di Website Saya</h1>
+                    <p>Ini adalah contoh header dengan dua kolom. Kolom kiri berisi teks profil singkat dan penjelasan mengenai keahlian teknis serta bisnis yang saya kelola saat ini.</p>
+                    <a href="#about" class="btn-black">Pelajari Lebih Lanjut</a>
+                </div>
+                <div class="hero-image">
+                    [ Gambar Profil Anda ]
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section 3: Biodata -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <p class="section-subtitle">A brief introduction about myself</p>
+            
+            <table class="biodata-table">
+                <tr>
+                    <td>
+                        <strong>Full Name</strong>
+                        <span>Jerryco Sompotan</span>
+                    </td>
+                    <td>
+                        <strong>Education</strong>
+                        <span>Development Training</span>
+                    </td>
+                    <td>
+                        <strong>Pekerjaan</strong>
+                        <span>E-commerce Owner (OOTDverse)</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <strong>Contact</strong>
+                        <span>jerryco@example.com</span>
+                    </td>
+                    <td>
+                        <strong>Hobi</strong>
+                        <span>Tech Projects & Stock Trading</span>
+                    </td>
+                    <td>
+                        <strong>Alamat</strong>
+                        <span>Jakarta, Indonesia</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- Section 4: Portofolio -->
+    <section id="portfolio" style="border-bottom: none;">
+        <div class="container">
+            <h2 class="section-title">Portofolio</h2>
+            <br>
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <div class="portfolio-img">350 x 200</div>
+                    <h3>Proyek 1</h3>
+                    <p>Manajemen dan operasional E-commerce OOTDverse.</p>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">350 x 200</div>
+                    <h3>Proyek 2</h3>
+                    <p>Instalasi & konfigurasi sistem PABX/VoIP.</p>
+                </div>
+                <div class="portfolio-card">
+                    <div class="portfolio-img">350 x 200</div>
+                    <h3>Proyek 3</h3>
+                    <p>Integrasi Shipping API untuk logistik bisnis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
