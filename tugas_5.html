@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daftar Produk</title>
+    <style>
+      .search-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+      }
+      .product-list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+      .product-card {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+      }
+      .product-card img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <input
+      type="search"
+      id="search-input"
+      class="search-input"
+      placeholder="Cari produk..."
+    />
+    <div id="products"></div>
+
+    <script>
+      const searchEl = document.getElementById("search-input");
+      const productsContainer = document.getElementById("products");
+
+      const products = [
+        {
+          nama: "Kemeja Flanel Premium",
+          harga: 150000,
+          deskripsi:
+            "Kemeja flanel lengan panjang dengan bahan katun tebal dan nyaman dipakai sehari-hari.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Celana Chino Slim Fit",
+          harga: 185000,
+          deskripsi:
+            "Celana chino panjang pria dengan potongan slim fit, elastis, dan modis.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Sepatu Sneaker Kasual",
+          harga: 320000,
+          deskripsi:
+            "Sepatu sneakers ringan dengan sol empuk, cocok untuk olahraga ringan atau hangout.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Jaket Bomber Waterproof",
+          harga: 250000,
+          deskripsi:
+            "Jaket bomber tahan air dan angin, dilengkapi kantong dalam dan desain trendi.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Kaos Polos Cotton Combed 30s",
+          harga: 450000,
+          deskripsi:
+            "Kaos polos lengan pendek berbahan 100% serat kapas murni yang adem dan menyerap keringat.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Tas Ransel Laptop",
+          harga: 210000,
+          deskripsi:
+            "Tas punggung dilengkapi slot laptop hingga 15 inci dan material antiair.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Jam Tangan Analog Kulit",
+          harga: 275000,
+          deskripsi:
+            "Jam tangan elegan dengan strap kulit asli dan fitur tahan air hingga kedalaman 30 meter.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Topi Baseball Klasik",
+          harga: 650000,
+          deskripsi:
+            "Topi katun dengan pengait besi di bagian belakang yang bisa disesuaikan ukurannya.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Sandal Slide Spons",
+          harga: 550000,
+          deskripsi:
+            "Sandal slop santai dengan bahan spons eva super empuk dan tidak licin.",
+          gambar: "https://placehold.co/600x400",
+        },
+        {
+          nama: "Kacamata Hitam UV Protection",
+          harga: 120000,
+          deskripsi:
+            "Kacamata hitam dengan lensa polaroid anti silau yang melindungi mata dari sinar matahari.",
+          gambar: "https://placehold.co/600x400",
+        },
+      ];
+
+      function renderProducts(filteredProducts) {
+        if (filteredProducts.length === 0) {
+          productsContainer.innerHTML = "<p>Produk tidak ditemukan</p>";
+          return;
+        }
+
+        let productsHTML = `<div class="product-list">`;
+        for (let i = 0; i < filteredProducts.length; i++) {
+          const product = filteredProducts[i];
+          productsHTML += `
+            <div class="product-card">
+              <img src="${product.gambar}" alt="${product.nama}">
+              <h2>${product.nama}</h2>
+              <p><strong>Rp ${product.harga.toLocaleString("id-ID")}</strong></p>
+              <p>${product.deskripsi}</p>
+            </div>
+          `;
+        }
+        productsHTML += `</div>`;
+
+        productsContainer.innerHTML = productsHTML;
+      }
+
+      renderProducts(products);
+
+      searchEl.addEventListener("input", (event) => {
+        const value = event.target.value.toLowerCase();
+        const filtered = products.filter((item) =>
+          item.nama.toLowerCase().includes(value),
+        );
+        renderProducts(filtered);
+      });
+    </script>
+  </body>
+</html>
